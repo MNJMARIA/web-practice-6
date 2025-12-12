@@ -68,11 +68,36 @@ body {
 
 
 /* ------- CONTENT ------- */
-.tabs-nav { display: flex; border-bottom: 2px solid #007bff; margin-bottom: 10px; }
-.tabs-nav button { padding: 10px 20px; background: #f0f0f0; border: none; cursor: pointer; }
-.tabs-nav button.active { background: white; border-bottom: 2px solid #007bff; font-weight: bold; }
-.tab-panel { padding: 20px; border: 1px solid #ddd; min-height: 100px; display: none; }
-.tab-panel.active { display: block; }
+
+.tabs-nav {
+  display: flex;
+  border-bottom: 2px solid #007bff;
+  margin-bottom: 10px;
+}
+
+.tabs-nav button {
+  padding: 10px 20px;
+  background: #f0f0f0;
+  border: none;
+  cursor: pointer;
+}
+
+.tabs-nav button.active {
+  background: white;
+  border-bottom: 2px solid #007bff;
+  font-weight: bold;
+}
+
+.tab-panel {
+  padding: 20px;
+  border: 1px solid #ddd;
+  min-height: 100px;
+  display: none;
+}
+
+.tab-panel.active {
+  display: block;
+}
 
 .block2 {
   grid-area: block2;
