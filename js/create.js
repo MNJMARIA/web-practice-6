@@ -21,6 +21,7 @@ function renderForm() {
 }
 
 function saveTabs() {
+    //Асинхронне збереження на сервер
     fetch('php/save.php', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },

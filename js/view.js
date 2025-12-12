@@ -33,6 +33,7 @@ function openTab(index) {
     document.querySelectorAll('.tab-panel').forEach((p, i) => p.classList.toggle('active', i === index));
 }
 
+//Періодичний асинхронний контроль змін 
 // Завантаження при старті і кожні 5 секунд
 loadTabs();
 setInterval(loadTabs, 5000);
