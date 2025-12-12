@@ -1,5 +1,5 @@
-kind: wasmer.io/App.v0
 name: web-practice-6-stepanova-mariia
+app_id: da_2yGI9trU8E9N
 owner: mnjmaria
 package: .
-app_id: da_2yGI9trU8E9N
+kind: wasmer.io/App.v0

@@ -1,7 +1,10 @@
 <?php
 header('Content-Type: text/plain');
-header('Access-Control-Allow-Origin: *'); // Дозволити запити з будь-якого домену
+header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Methods: POST');
+header('Access-Control-Allow-Headers: Content-Type');
+
 $input = file_get_contents('php://input');
-// Замість запису у файл, просто повертаємо успіх
-echo "saved (demo mode)";
+file_put_contents('../tabs.json', $input);  // зберігає в корінь
+echo "saved successfully";
 ?>
