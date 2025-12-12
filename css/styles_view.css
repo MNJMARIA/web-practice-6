@@ -1,0 +1,293 @@
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: auto auto auto auto;
+  grid-template-areas:
+    "header header header"
+    "block2 block3 block4"
+    "block5 block5 block4"
+    "footer footer footer";
+  gap: 10px;
+}
+
+/* -------БЛОКИ-------- */
+
+/* ---------HEADER --------- */
+.block1 { 
+  grid-area: header; 
+  background-color: #b3d9ff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+}
+
+/* Білий контейнер ліворуч */
+.header-inner {
+  background-color: #ffffff;
+  padding: 10px 20px;
+  width: 300px;
+  display: inline-block;
+  text-align: right; /* текст у білому контейнері праворуч */
+}
+
+.block1 h1 {
+  margin: 0;
+}
+
+
+/* Меню */
+.header-menu {
+  margin-left: 40px;
+}
+
+.header-menu ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+}
+
+.header-menu a {
+  text-decoration: none;
+  color: #003366;
+  font-weight: bold;
+  transition: color 0.2s ease;/*плавна зміна кольору*/
+}
+
+.header-menu a:hover {
+  color: #0077cc;
+}
+
+
+
+/* ------- CONTENT ------- */
+.tabs-nav { display: flex; border-bottom: 2px solid #007bff; margin-bottom: 10px; }
+.tabs-nav button { padding: 10px 20px; background: #f0f0f0; border: none; cursor: pointer; }
+.tabs-nav button.active { background: white; border-bottom: 2px solid #007bff; font-weight: bold; }
+.tab-panel { padding: 20px; border: 1px solid #ddd; min-height: 100px; display: none; }
+.tab-panel.active { display: block; }
+
+.block2 {
+  grid-area: block2;
+  background-color: #ffe6cc;
+  padding: 10px;
+  padding-right: 30px; 
+  padding-left: 30px;
+  text-align: right;
+}
+
+.block3 {
+  grid-area: block3;
+  background-color: #ffffff;
+  padding: 10px;
+  padding-right: 30px; 
+  min-height: 150px;
+  text-align: right;
+}
+
+.block4 {
+  grid-area: block4;
+  background-color: #ffe6cc;
+  padding: 10px;
+  padding-right: 30px; 
+  text-align: right;
+}
+
+.block5 {
+  grid-area: block5;
+  background-color: #e6f2d9;
+  padding: 10px;
+  padding-left: 30px;
+  text-align: center;
+  text-align: left;
+}
+
+
+
+/* --------FOOTER----------- */
+.block6 {
+  grid-area: footer;
+  background-color: #b3d9ff;
+  padding: 15px 30px;
+  display: flex; 
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Білий контейнер зліва */
+.footer-inner {
+  background-color: #ffffff;
+  padding: 10px 20px;
+  width: 300px; /* у 2 рази ширше за текст приблизно */
+  text-align: left;
+}
+
+/* Список контактів праворуч */
+.footer-info {
+  text-align: right;
+}
+
+.footer-info ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: right;
+}
+
+.footer-info li {
+  margin-bottom: 5px;
+  font-size: 15px;
+}
+
+
+
+
+
+
+
+/* GALLERY  - PAGE3 */
+.gallery {
+  display: flex;
+  flex-wrap: wrap; /* дозволяє фото переноситися на новий ряд */
+  gap: 40px; /* відстань між фото */
+  justify-content: center;  /* вирівнювання по центру */
+  margin-top: 20px;
+}
+
+figure {
+  display: flex;
+  flex-direction: column;   /* фото над підписом */
+  align-items: center;
+  margin: 0;
+}
+
+/* Контейнер для фото */
+.photo-container {
+  width: 300px;
+  height: 300px; /* фіксована висота для однакової сітки */
+  background-color: black;  /* чорний фон для заповнення*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* приховує зайве, щоб не вилазило за межі */
+  border-radius: 8px;
+}
+
+/* Саме зображення */
+.photo-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;      
+  /*contain масштабує фото повністю в контейнер, не обрізаючи - фон чорний, тому навколо фото будуть чорні поля */
+}
+
+/* Підпис під фото */
+figcaption {
+  width: 300px;
+  height: 35px;
+  background-color: #ccc;
+  color: #000;
+  display: flex;
+  justify-content: center; /* текст по центру горизонтально */
+  align-items: center; /* і вертикально */
+  border-radius: 0 0 8px 8px;
+  font-weight: bold;
+  font-size: 16px;
+  margin-top: 5px;
+}
+
+
+
+.right-aligned-list {
+    text-align: right;
+    list-style-position: inside; /* Крапки теж праворуч */
+    padding-right: 0;
+}
+
+.right-aligned-list li {
+    margin-bottom: 10px;
+    padding: 5px 0;
+}
+
+
+
+/* Для мобільних пристроїв */
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "header"
+      "block2"
+      "block3"
+      "block4"
+      "block5"
+      "footer";
+    gap: 15px;
+  }
+  
+  .block1 {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+    align-items: center;
+  }
+  
+  .header-inner {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .header-menu ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .block6 {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+  
+  .footer-inner {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .footer-info ul {
+    text-align: center;
+  }
+  
+  .gallery {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .photo-container,
+  figcaption {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+/* Для дуже маленьких екранів */
+@media (max-width: 480px) {
+  .block1,
+  .block2,
+  .block3,
+  .block4,
+  .block5,
+  .block6 {
+    padding: 15px;
+  }
+  
+  .block1 h1 {
+    font-size: 1.5em;
+  }
+}
