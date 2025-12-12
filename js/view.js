@@ -1,5 +1,5 @@
 function loadTabs() {
-    fetch('php/load.php')
+    fetch('php\load.php')
         .then(r => r.json())
         .then(data => renderTabs(data || []))
         .catch(() => {
