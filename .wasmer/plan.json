@@ -1,0 +1,48 @@
+{
+  "$schema": "https://schemas.wasmer.io/edge/plan.schema.json",
+  "project": {
+    "name": "web-practice-6",
+    "repository": {
+      "private": false
+    }
+  },
+  "services": [
+    {
+      "name": "app",
+      "source": {
+        "type": "github",
+        "repo": "MNJMARIA/web-practice-6",
+        "branch": "main"
+      },
+      "build": {
+        "command": "echo 'No build needed for static PHP'",
+        "args": [],
+        "mounts": [
+          {
+            "source": "./",
+            "destination": "/app"
+          }
+        ]
+      },
+      "runtime": {
+        "name": "wasmerio/php",
+        "version": "8.2"  // Або 8.1, якщо потрібно
+      },
+      "http": {
+        "handler": "php",
+        "ports": [
+          {
+            "port": 8080,
+            "host": "0.0.0.0"
+          }
+        ]
+      },
+      "volumes": [
+        {
+          "name": "data",
+          "source": "tabs.json",
+          "destination": "/app/data"
+        }
+      ]
+  ]
+}
