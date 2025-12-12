@@ -1,8 +1,9 @@
 <?php
 header('Content-Type: application/json');
-if (file_exists('tabs.json')) {
-    echo file_get_contents('tabs.json');
-} else {
-    echo json_encode([]);
-}
+header('Access-Control-Allow-Origin: *'); // Дозволити запити з будь-якого домену
+// Замість читання файлу, повертаємо тестові дані
+echo json_encode([
+    ["title" => "Демо-вкладка 1", "content" => "Це демонстраційний контент. Дані зберігаються лише на сесії браузера."],
+    ["title" => "Демо-вкладка 2", "content" => "Щоб зберегти дані постійно, потрібно налаштувати базу даних або сховище."]
+]);
 ?>

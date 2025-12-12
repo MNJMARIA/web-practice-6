@@ -1,0 +1,19 @@
+[package]
+name = "web-practice-6"
+version = "0.1.0"
+
+[fs]
+"/" = "."
+"/config" = "config"
+
+[dependencies]
+"php/php" = "*"
+
+[[command]]
+name = "start"
+module = "php/php:php"
+runner = "wasi"
+
+[command.annotations.wasi]
+main-args = ["-S", "0.0.0.0:8080", "-t", "/"]
+env = ["PHPRC=/config/"]
