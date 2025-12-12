@@ -21,7 +21,7 @@ function renderForm() {
 }
 
 function saveTabs() {
-    fetch('php\save.php', {
+    fetch('php/save.php', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(tabs)
